@@ -1,5 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Box, Container, Pagination, Slider, TextField } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Pagination,
+  Slider,
+  TextField,
+} from "@mui/material";
 
 import { productsContext } from "../../contexts/productsContext";
 import ProductCard from "../ProductCard/ProductCard";
@@ -39,7 +46,6 @@ const ProductsList = () => {
     getProducts();
   }, [searchParams]);
 
-  console.log(window.location.search);
   return (
     <Container>
       <video
@@ -58,13 +64,21 @@ const ProductsList = () => {
         }}>
         <source src={Video} />
       </video>
-      <Box style={{ display: "flex" }}>
+      <Box
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}>
         <TextField
           value={search}
           label="Search"
           onChange={e => setSearch(e.target.value)}
           variant="outlined"
         />
+        <Button width={"300px"} variant="contained">
+          Send
+        </Button>
         <Slider
           getAriaLabel={() => "Temperature range"}
           value={price}
