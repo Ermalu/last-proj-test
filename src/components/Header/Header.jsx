@@ -1,9 +1,11 @@
-import { Container } from "@mui/system";
+import { Container, width } from "@mui/system";
 
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Image from "../images/logo.png";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import ImageProducts from "../images/Products.png";
+import ImageAddProducts from "../images/addProducts.png";
+import ImageCart from "../images/cart.png";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -25,24 +27,37 @@ const Header = () => {
             alt=""
           />
         </p>
-        <p
-          onClick={() => {
-            navigate("/products");
-          }}>
-          Procucts
+        <p>
+          <img
+            onClick={() => {
+              navigate("/products");
+            }}
+            width={"150px"}
+            src={ImageAddProducts}
+            alt=""
+          />
         </p>
 
-        <p
-          onClick={() => {
-            navigate("/add-product");
-          }}>
-          Add Procucts
+        <p>
+          <img
+            onClick={() => {
+              navigate("/add-product");
+            }}
+            width={"150px"}
+            src={ImageProducts}
+            alt=""
+          />
         </p>
-        <ShoppingCartIcon
-          onClick={() => {
-            navigate("/cart");
-          }}
-        />
+        <p>
+          <img
+            onClick={() => {
+              navigate("/cart");
+            }}
+            width={"50px"}
+            src={ImageCart}
+            alt=""
+          />
+        </p>
       </div>
     </Container>
   );
