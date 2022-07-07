@@ -7,6 +7,7 @@ import Details from "./components/Details/Details";
 import EditProduct from "./components/EditProduct/EditProduct";
 import Home from "./components/Home/Home";
 import ProductsList from "./components/ProductsList/ProductsList";
+import Purchase from "./components/Purchase/Purchase";
 
 const Routing = () => {
   return (
@@ -17,6 +18,7 @@ const Routing = () => {
       <Route path="/details/:id" element={<Details />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/" element={<Home />} />
+      <Route path="/purchase" element={<Purchase />} />
     </Routes>
   );
 };
