@@ -6,14 +6,14 @@ import { Box } from "@mui/material";
 
 const Home = () => {
   return (
-    <div>
+    <div style={{ height: "100vh" }}>
       <div>
         <video
           autoPlay
           loop
           muted
           style={{
-            position: "absolute",
+            position: "fixed",
             width: "100%",
             left: "50%",
             top: "50%",
@@ -25,7 +25,14 @@ const Home = () => {
           <source src={Video} />
         </video>
 
-        <h1>Первый Candy-Shop в Бишкеке!</h1>
+        <h1
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            color: "#f06292",
+          }}>
+          Первый Candy-Shop в Бишкеке!
+        </h1>
         <Box
           display={"flex"}
           justifyContent={"center"}
@@ -46,10 +53,15 @@ const Home = () => {
                 alt="First slide"
               />
               <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>
-                  Nulla vitae elit libero, a pharetra augue mollis interdum.
-                </p>
+                <div style={{ color: "black" }}>
+                  <h3> Мармеладные червячки</h3>
+                  <p>
+                    Их производство было начато в Германии. В 1920 году Ханс
+                    Ригель старший, владелец кондитерской фабрики в Бонне,
+                    основал компанию Haribo, а в 1922 году придумал мармеладных
+                    червячки.
+                  </p>
+                </div>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -61,8 +73,15 @@ const Home = () => {
               />
 
               <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div style={{ color: "black" }}>
+                  <h3>Мармелад</h3>
+                  <p>
+                    Мармела́д — кулинарный продукт, приготовленный из фруктовых,
+                    ягодных пюре или соков, варёных с сахаром с содержанием
+                    влаги по массе не более 22 % (жевательный) — 33 %
+                    (фруктово-ягодный и желейный)
+                  </p>
+                </div>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -74,11 +93,15 @@ const Home = () => {
               />
 
               <Carousel.Caption>
-                <h3>Third slide label</h3>
-                <p>
-                  Praesent commodo cursus magna, vel scelerisque nisl
-                  consectetur.
-                </p>
+                <div style={{ color: "black" }}>
+                  <h3>M&Ms</h3>
+                  <p>
+                    M&M’s (исторически верное произношение: «Эм-эн-Эмс»[1][2]) —
+                    шоколадное драже, выпускаемое фирмой Mars LLC. Впервые
+                    появилось в США в 1941 году и сейчас продаётся более чем в
+                    100 странах.
+                  </p>
+                </div>
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>

@@ -65,20 +65,24 @@ const ProductsList = () => {
         <source src={Video} />
       </video>
       <Box
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}>
-        <TextField
-          value={search}
-          label="Search"
-          onChange={e => setSearch(e.target.value)}
-          variant="outlined"
-        />
-        <Button width={"300px"} variant="contained">
-          Send
-        </Button>
+        style={
+          {
+            // display: "flex",
+            // justifyContent: "space-between",
+            // alignItems: "center",
+          }
+        }>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <TextField
+            value={search}
+            label="Search"
+            onChange={e => setSearch(e.target.value)}
+            variant="outlined"
+          />
+          <Button width={"300px"} variant="contained">
+            Send
+          </Button>
+        </div>
         <Slider
           getAriaLabel={() => "Temperature range"}
           value={price}
@@ -91,7 +95,7 @@ const ProductsList = () => {
           step={100}
         />
       </Box>
-      <Box>
+      <Box style={{ display: "flex" }}>
         {products.map(item => (
           <ProductCard key={item.id} item={item} />
         ))}

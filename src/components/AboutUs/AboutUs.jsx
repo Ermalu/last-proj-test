@@ -1,19 +1,49 @@
+import { Container } from "@mui/material";
 import React from "react";
+import Image from "../images/aboutUs.jpeg";
 
 const AboutUs = () => {
   return (
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, laborum
-      ipsa quisquam labore soluta aperiam consectetur ipsam officiis incidunt
-      doloremque, deleniti dignissimos vitae aliquam, fugiat natus cum facere
-      eveniet sit velit odit est corporis illum? Voluptate alias ullam inventore
-      totam, vero cum minus veritatis quidem reprehenderit ex libero dolor neque
-      nulla. Rerum laudantium ea tempore doloribus reiciendis assumenda impedit,
-      ex at pariatur, animi libero atque labore, eos totam repudiandae. Eos
-      recusandae quae enim qui nihil odio consectetur minus voluptatem, sint
-      fuga iusto dolorem, tenetur reprehenderit possimus labore magnam non saepe
-      pariatur ad? Ut nihil aliquam voluptas libero numquam, voluptates
-      voluptatibus.
+    <div
+      style={{
+        height: "100vh",
+      }}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          marginTop: "120px",
+        }}>
+        <img
+          style={{
+            position: "fixed",
+            width: "100%",
+            left: "50%",
+            top: "50%",
+            height: "100%",
+            objectFit: "cover",
+            transform: "translate(-50%, -50%)",
+            zIndex: "-1",
+          }}
+          src={Image}
+        />
+
+        <Container maxWidth="sm">
+          Магазин сладостей Candy-Shop расположен в городе Бишкек и является
+          одним из самых популярных заведений у детей и взрослых. Здесь
+          представлен огромный ассортимент сладостей: леденцы, тянучки,
+          сосательные конфеты, зефир, пастила, орехи засахаренные и в шоколаде,
+          жвачки и многое другое. Заведение расположено на первом этаже
+          небольшого дома и необыкновенно красиво обставлено: к входу ведет
+          дорожка из леденцов на палочках, а внутри магазина нет ни одного
+          свободного места на полках – везде сладости на любой вкус. Стены лавки
+          со сладостями Candy-Shop пестрят яркими красками, привлекая к стендам
+          с конфетами внимание. Каждый день в магазине работает аниматор,
+          переодетый в милого зверя, который готов развлечь детей и помочь с
+          выбором.
+        </Container>
+      </div>
     </div>
   );
 };
