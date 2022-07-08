@@ -27,13 +27,13 @@ export default class PaymentForm extends React.Component {
 
   render() {
     return (
-      <div id="PaymentForm">
+      <div style={{ height: "100vh" }} id="PaymentForm">
         <video
           autoPlay
           loop
           muted
           style={{
-            position: "absolute",
+            position: "fixed",
             width: "100%",
             left: "50%",
             top: "50%",
