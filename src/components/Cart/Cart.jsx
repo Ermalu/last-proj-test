@@ -37,13 +37,13 @@ export default function Cart() {
   }, []);
   console.log(cart);
   return cart ? (
-    <div>
+    <div style={{ height: "100vh" }}>
       <video
         autoPlay
         loop
         muted
         style={{
-          position: "absolute",
+          position: "fixed",
           width: "100%",
           left: "50%",
           top: "50%",

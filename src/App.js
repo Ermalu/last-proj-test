@@ -12,7 +12,6 @@ function App() {
       <ProductsContextProvider>
         <BrowserRouter>
           <Header />
-
           <Routing />
           <Footer />
         </BrowserRouter>
