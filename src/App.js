@@ -12,8 +12,9 @@ function App() {
       <ProductsContextProvider>
         <BrowserRouter>
           <Header />
-          <Footer />
+
           <Routing />
+          <Footer />
         </BrowserRouter>
       </ProductsContextProvider>
     </CartContextProvider>
