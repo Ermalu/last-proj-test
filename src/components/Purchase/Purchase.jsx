@@ -94,7 +94,6 @@ export default class PaymentForm extends React.Component {
                 }}>
                 Success
               </Button>
-              ...
             </Box>
           </Container>
         </form>
