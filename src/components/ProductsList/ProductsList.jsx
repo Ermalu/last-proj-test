@@ -26,11 +26,11 @@ const ProductsList = () => {
     searchParams.get("_page") ? +searchParams.get("_page") : 1
   );
 
-  const [price, setPrice] = useState([1, 10000]);
+  const [price, setPrice] = useState([0, 10000]);
 
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [searchParams]);
 
   useEffect(() => {
     setSearchParams({
@@ -47,14 +47,13 @@ const ProductsList = () => {
   }, [searchParams]);
 
   return (
-
-    <Container>
+    <Container style={{ height: "100vh", marginBottom: "50px" }}>
       <video
         autoPlay
         loop
         muted
         style={{
-          position: "absolute",
+          position: "fixed",
           width: "100%",
           left: "50%",
           top: "50%",
@@ -66,52 +65,23 @@ const ProductsList = () => {
         <source src={Video} />
       </video>
       <Box
-        style={
-          {
-            // display: "flex",
-            // justifyContent: "space-between",
-            // alignItems: "center",
-          }
-        }>
-        <div style={{ display: "flex", justifyContent: "center" }}>
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          flexDirection: "column",
+        }}>
+        <TextField
+          value={search}
+          color={"secondary"}
+          label="Search"
+          onChange={e => setSearch(e.target.value)}
+          variant="outlined"
+        />
 
-    <div style={{ height: "100vh" }}>
-      <Container>
-        <video
-          autoPlay
-          loop
-          muted
-          style={{
-            position: "fixed",
-            width: "100%",
-            left: "50%",
-            top: "50%",
-            height: "100%",
-            objectFit: "cover",
-            transform: "translate(-50%, -50%)",
-            zIndex: "-1",
-          }}>
-          <source src={Video} />
-        </video>
-        <Box
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}>
-
-          <TextField
-            value={search}
-            label="Search"
-            onChange={e => setSearch(e.target.value)}
-            variant="outlined"
-          />
-          <Button width={"300px"} variant="contained">
-            Send
-          </Button>
-
-        </div>
         <Slider
+          style={{ marginTop: "100px" }}
+          color={"secondary"}
           getAriaLabel={() => "Temperature range"}
           value={price}
           onChange={(e, value) => {
@@ -123,12 +93,22 @@ const ProductsList = () => {
           step={100}
         />
       </Box>
-      <Box style={{ display: "flex" }}>
+      <Box
+        style={{
+          display: "flex",
+          justifyContent: "space-evenly",
+          // marginTop: "50px",
+        }}>
         {products.map(item => (
           <ProductCard key={item.id} item={item} />
         ))}
       </Box>
-      <Box>
+      <Box
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          // marginTop: "100px",
+        }}>
         <Pagination
           onChange={(event, page) => {
             setCurrentPage(page);
@@ -136,42 +116,10 @@ const ProductsList = () => {
           page={currentPage}
           count={pages}
           variant="outlined"
-          color="primary"
+          color="secondary"
         />
       </Box>
     </Container>
-
-          <Slider
-            getAriaLabel={() => "Temperature range"}
-            value={price}
-            onChange={(e, value) => {
-              setPrice(value);
-            }}
-            valueLabelDisplay="auto"
-            min={0}
-            max={10000}
-            step={100}
-          />
-        </Box>
-        <Box>
-          {products.map(item => (
-            <ProductCard key={item.id} item={item} />
-          ))}
-        </Box>
-        <Box>
-          <Pagination
-            onChange={(event, page) => {
-              setCurrentPage(page);
-            }}
-            page={currentPage}
-            count={pages}
-            variant="outlined"
-            color="primary"
-          />
-        </Box>
-      </Container>
-    </div>
-
   );
 };
 
