@@ -1,0 +1,8 @@
+.details {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  /* align-self: center; */
+  align-items: center;
+  flex-direction: column-reverse;
+}

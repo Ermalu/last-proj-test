@@ -6,6 +6,32 @@
       "price": 1223,
       "image": "123",
       "id": 1
+      "title": "asdasd",
+      "description": "asdasd",
+      "price": 1.2344444412121323e+21,
+      "image": "asd",
+      "id": 8
+    },
+    {
+      "title": "fdddfd",
+      "description": "fd",
+      "price": 454354,
+      "image": "fdgfgf",
+      "id": 9
+    },
+    {
+      "title": "dfdffd",
+      "description": "fdgg",
+      "price": 45454545,
+      "image": "dgdh",
+      "id": 10
+    },
+    {
+      "title": "шарики ",
+      "description": "сладкие шарики",
+      "price": 100,
+      "image": "https://st.depositphotos.com/1010050/2297/i/600/depositphotos_22978426-stock-photo-assorted-ice-cream.jpg",
+      "id": 11
     }
   ]
 }

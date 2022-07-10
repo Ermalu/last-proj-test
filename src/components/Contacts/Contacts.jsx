@@ -1,3 +1,4 @@
+
 import { Container } from "@mui/material";
 import React from "react";
 import Image from "../images/contacts.jpeg";
@@ -35,6 +36,12 @@ const Contacts = () => {
       </div>
     </div>
   );
+
+import React from "react";
+
+const Contacts = () => {
+  return <div>Контакты</div>;
+
 };
 
 export default Contacts;
