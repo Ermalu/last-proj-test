@@ -1,7 +1,7 @@
 import { Container, width } from "@mui/system";
 
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Image from "../images/logo.png";
 import ImageProducts from "../images/Products.png";
 import ImageAddProducts from "../images/addProducts.png";
@@ -9,6 +9,7 @@ import ImageCart from "../images/cart.png";
 
 const Header = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   return (
     <Container>
       <div
@@ -29,9 +30,15 @@ const Header = () => {
         </p>
         <p>
           <img
-            onClick={() => {
-              navigate("/products");
-            }}
+            // onClick={() => {
+
+            //   navigate("/products");
+            // }}
+            onClick={
+              location.pathname == "/products"
+                ? null
+                : () => navigate("/products")
+            }
             width={"150px"}
             src={ImageAddProducts}
             alt=""
