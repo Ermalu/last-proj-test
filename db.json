@@ -3,16 +3,9 @@
     {
       "title": "123",
       "description": "123",
-      "price": 123,
+      "price": 1223,
       "image": "123",
       "id": 1
-    },
-    {
-      "title": "32",
-      "description": "32",
-      "price": 32,
-      "image": "32",
-      "id": 2
     }
   ]
 }
