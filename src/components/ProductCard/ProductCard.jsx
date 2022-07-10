@@ -21,14 +21,17 @@ export default function ProductCard({ item }) {
     checkProductInCart(item.id)
   );
   return (
-    <Card sx={{ maxWidth: 345, margin: "10px" }}>
+    <Card
+      style={{ display: "flex", flexDirection: "column" }}
+      sx={{ maxWidth: 345, margin: "10px" }}>
       <CardMedia
         component="img"
         height="140"
         image={item.image}
         alt="product"
       />
-      <CardContent>
+
+      <CardContent style={{ backgroundColor: "pink" }}>
         <Typography gutterBottom variant="h5" component="div">
           {item.title}
         </Typography>
@@ -36,7 +39,8 @@ export default function ProductCard({ item }) {
           {item.price}
         </Typography>
       </CardContent>
-      <CardActions>
+
+      <CardActions style={{ backgroundColor: "pink" }}>
         <Button size="small" onClick={() => deleteProduct(item.id)}>
           Delete
         </Button>

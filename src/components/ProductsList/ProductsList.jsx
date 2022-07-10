@@ -47,6 +47,34 @@ const ProductsList = () => {
   }, [searchParams]);
 
   return (
+
+    <Container>
+      <video
+        autoPlay
+        loop
+        muted
+        style={{
+          position: "absolute",
+          width: "100%",
+          left: "50%",
+          top: "50%",
+          height: "100%",
+          objectFit: "cover",
+          transform: "translate(-50%, -50%)",
+          zIndex: "-1",
+        }}>
+        <source src={Video} />
+      </video>
+      <Box
+        style={
+          {
+            // display: "flex",
+            // justifyContent: "space-between",
+            // alignItems: "center",
+          }
+        }>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+
     <div style={{ height: "100vh" }}>
       <Container>
         <video
@@ -71,6 +99,7 @@ const ProductsList = () => {
             justifyContent: "space-between",
             alignItems: "center",
           }}>
+
           <TextField
             value={search}
             label="Search"
@@ -80,6 +109,38 @@ const ProductsList = () => {
           <Button width={"300px"} variant="contained">
             Send
           </Button>
+
+        </div>
+        <Slider
+          getAriaLabel={() => "Temperature range"}
+          value={price}
+          onChange={(e, value) => {
+            setPrice(value);
+          }}
+          valueLabelDisplay="auto"
+          min={0}
+          max={10000}
+          step={100}
+        />
+      </Box>
+      <Box style={{ display: "flex" }}>
+        {products.map(item => (
+          <ProductCard key={item.id} item={item} />
+        ))}
+      </Box>
+      <Box>
+        <Pagination
+          onChange={(event, page) => {
+            setCurrentPage(page);
+          }}
+          page={currentPage}
+          count={pages}
+          variant="outlined"
+          color="primary"
+        />
+      </Box>
+    </Container>
+
           <Slider
             getAriaLabel={() => "Temperature range"}
             value={price}
@@ -110,6 +171,7 @@ const ProductsList = () => {
         </Box>
       </Container>
     </div>
+
   );
 };
 
